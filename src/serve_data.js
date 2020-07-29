@@ -109,7 +109,7 @@ module.exports = {
         return res.sendStatus(404);
       }
       const info = clone(item.tileJSON);
-      if (!info.tiles || !info.tiles[0].startsWith('http')) {
+      if (!info.tiles || !info.tiles[0].startsWith('http') || !info.tiles[0].startsWith('https')) {
         info.tiles = utils.getTileUrls(req, info.tiles,
                                       `data/${req.params.id}`, info.format, item.publicUrl, {
                                         'pbf': options.pbfAlias
