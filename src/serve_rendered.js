@@ -275,7 +275,7 @@ module.exports = {
           pool.release(renderer);
           if (err) {
             console.error(err);
-            return;
+            return res.status(500).send(err);
           }
 
           // Fix semi-transparent outlines on raw, premultiplied input
